@@ -1,2 +1,2 @@
 # TreesAreMedian
-Necessary defs, lemmas, proofs, trees being median graphs
+Proof that trees are median; necessary defs, lemmas
