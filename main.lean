@@ -12,6 +12,10 @@ variable {V : Type*} {G : SimpleGraph V}
 def InInterval (G : SimpleGraph V) (x y : V) : Set V :=
   {v | G.dist x v + G.dist v y = G.dist x y}
 
+def IsMedian : Prop :=
+  G.Connected ∧ ∀ v1 v2 v3 : V, ∃! m,
+    m ∈ InInterval V G v1 v2 ∩ InInterval V G v2 v3 ∩ InInterval V G v1 v3
+
 lemma unique_path
     (hG : G.IsAcyclic) (x y : V)
     (p q : G.Walk x y)
